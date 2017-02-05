@@ -1,0 +1,57 @@
+{
+  "name": "RpgPlayer",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "firstname": {
+      "type": "string",
+      "required": true
+    },
+    "lastname": {
+      "type": "string",
+      "required": true
+    },
+    "caseSize": {
+      "type": "number",
+      "required": true,
+      "default": 1
+    },
+    "age": {
+      "type": "number"
+    },
+    "size": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "rpgPlayerRpgRole": {
+      "type": "hasMany",
+      "model": "RpgPlayerRpgRole",
+      "foreignKey": ""
+    },
+    "rpgBoard": {
+      "type": "belongsTo",
+      "model": "RpgBoard",
+      "foreignKey": ""
+    },
+    "rpgPlayerRpgSkill": {
+      "type": "hasMany",
+      "model": "RpgPlayerRpgSkill",
+      "foreignKey": ""
+    },
+    "rpgPlayerRpgAttribute": {
+      "type": "hasMany",
+      "model": "RpgPlayerRpgAttribute",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

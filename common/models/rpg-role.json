@@ -1,0 +1,39 @@
+{
+  "name": "RpgRole",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "rpgBoard": {
+      "type": "belongsTo",
+      "model": "RpgBoard",
+      "foreignKey": ""
+    },
+    "rpgSkills": {
+      "type": "hasAndBelongsToMany",
+      "model": "RpgSkill",
+      "foreignKey": ""
+    },
+    "rpgAttributes": {
+      "type": "hasAndBelongsToMany",
+      "model": "RpgAttribute",
+      "foreignKey": ""
+    },
+    "rpgPlayerRpgRole": {
+      "type": "hasMany",
+      "model": "RpgPlayerRpgRole",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

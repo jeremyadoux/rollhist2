@@ -1,0 +1,28 @@
+{
+  "name": "RpgPlayerRpgRole",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "data": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "rpgPlayer": {
+      "type": "belongsTo",
+      "model": "RpgPlayer",
+      "foreignKey": ""
+    },
+    "rpgRole": {
+      "type": "belongsTo",
+      "model": "RpgRole",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
