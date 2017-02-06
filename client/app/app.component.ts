@@ -3,7 +3,6 @@ import {RpgPlayer} from "./shared/sdk/models/RpgPlayer";
 import {LoopBackConfig} from "./shared/sdk/lb.config";
 import {BASE_URL, API_VERSION} from "./shared/base.url";
 import {RpgPlayerApi} from "./shared/sdk/services/custom/RpgPlayer";
-import {LoopBackFilter} from "./shared/sdk/models/BaseModels";
 
 @Component({
   selector: 'my-app',
