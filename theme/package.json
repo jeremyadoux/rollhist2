@@ -1,0 +1,18 @@
+{
+  "name": "superflat-admin",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-nodeunit": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-csssplit": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-angular-templates": "latest"
+  },
+  "dependencies": {
+    "angular-animate": "^1.4.3",
+    "ng-if-bootstrap-grid": "^0.1.0"
+  }
+}
