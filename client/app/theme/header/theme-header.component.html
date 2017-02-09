@@ -1,0 +1,41 @@
+<header id="header" data-current-skin="blue">
+  <ul class="header-inner clearfix">
+    <li class="logo hidden-xs">
+      <a href="#">RollHist</a>
+    </li>
+
+    <li class="pull-right">
+      <ul class="top-menu">
+
+        <li id="top-search">
+          <a href="#"><i class="tm-icon zmdi zmdi-search"></i></a>
+        </li>
+        <li class="dropdown">
+
+        <li class="dropdown" dropdown >
+          <a dropdownToggle href>
+            <i class="tm-icon zmdi zmdi-more-vert"></i>
+          </a>
+          <ul dropdownMenu class="dropdown-menu dm-icon pull-right">
+            <li class="skin-switch hidden-xs">
+              <span>plop</span>
+            </li>
+            <li class="divider hidden-xs"></li>
+            <li class="hidden-xs">
+              <a data-ng-click="hctrl.fullScreen()" href=""><i class="zmdi zmdi-fullscreen"></i> Toggle Fullscreen</a>
+            </li>
+            <li>
+              <a data-ng-click="hctrl.clearLocalStorage()" href=""><i class="zmdi zmdi-delete"></i> Clear Local Storage</a>
+            </li>
+            <li>
+              <a href=""><i class="zmdi zmdi-face"></i> Privacy Settings</a>
+            </li>
+            <li>
+              <a href=""><i class="zmdi zmdi-settings"></i> Other Settings</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</header>

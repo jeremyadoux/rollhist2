@@ -1,0 +1,100 @@
+<div class="card">
+  <div class="card-header">
+    <h2>Création d'un joueur <small>A vous de remplir les informations du personnage.</small></h2>
+  </div>
+
+  <div class="card-body card-padding">
+    <div class="row">
+      <div class="col-sm-4">
+
+        <p class="f-500 c-black m-b-15">Case(s) occupée(s)</p>
+        <div class="select">
+          <select class="form-control" [(ngModel)]="rpgPlayer.caseSize">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="zmdi zmdi-upload"></i></span>
+          <div class="fg-line">
+            <input type="text" class="form-control" placeholder="Quantité d'XP">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+          <div class="fg-line">
+            <input [(ngModel)]="rpgPlayer.firstname" type="text" class="form-control" placeholder="Prénom du personnage">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+          <div class="fg-line">
+            <input [(ngModel)]="rpgPlayer.lastname" type="text" class="form-control" placeholder="Nom du personnage">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="zmdi zmdi-folder-person"></i></span>
+          <div class="fg-line">
+            <input [(ngModel)]="rpgPlayer.age" type="text" class="form-control" placeholder="Âge">
+          </div>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="zmdi zmdi-folder-person"></i></span>
+          <div class="fg-line">
+            <input [(ngModel)]="rpgPlayer.size" type="text" class="form-control" placeholder="Taille">
+          </div>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="zmdi zmdi-folder-person"></i></span>
+          <div class="fg-line">
+            <input [(ngModel)]="rpgPlayer.weight" type="text" class="form-control" placeholder="Poids">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div [ngSwitch]="panelValue">
+      <div class="row m-b-20">
+        <div class="col-sm-12 m-b-20">
+          <div class="toggle-switch">
+            <input id="ts1" type="checkbox" hidden="hidden" [checked]="panelValue == 1" (change)="switchChange($event.target.checked, 1)">
+            <label for="ts1" class="ts-helper"></label>
+            <label for="ts1" class="ts-label">plop1</label>
+          </div>
+          <div class="row m-b-20" *ngSwitchCase="1" [@switchAnimation]="'fadeIn'">
+            <div class="col-sm-6 m-b-20">
+              <p class="f-500 c-black m-b-15">La classe</p>
+              <div class="select">
+                <select class="form-control" [(ngModel)]="rpgPlayer.rpgPlayerRpgRole[0]">
+                  <option *ngFor="let role of rpgRoles" value="{{role}}">{{role.name}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row m-b-20">
+        <div class="col-sm-12 m-b-20">
+          <div class="toggle-switch">
+            <input id="ts2" type="checkbox" hidden="hidden" [checked]="panelValue == 2" (change)="switchChange($event.target.checked, 2)">
+            <label for="ts2" class="ts-helper"></label>
+            <label for="ts2" class="ts-label">plop2</label>
+          </div>
+          <div class="row m-b-20" *ngSwitchCase="2" [@switchAnimation]="'fadeIn'">
+            <div class="col-sm-12">
+              <div class="row m-b-20" *ngFor="let attribute of rpgPlayer.rpgPlayerRpgAttribute">
+                <rpg-player-attribute-management [rpgAttributePlayer]="attribute"></rpg-player-attribute-management>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

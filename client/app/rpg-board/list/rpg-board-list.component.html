@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-header">
+    <h2>
+      Sélectionner un plateau de jeu
+    </h2>
+  </div>
+
+  <div class="card-body card-padding">
+    <div class="clearfix">
+      <div class="tab-content">
+        <div class="tab-pane active">
+          <div class="row">
+            <div class="col-sm-4" *ngFor="let rpgBoard of rpgBoardList">
+              <div class="card">
+                <div class="card-header bgm-bluegray m-b-20">
+                  <h2>{{rpgBoard.name}}</h2>
+
+                  <button [routerLink]="['/board', rpgBoard.id]" class="btn bgm-blue btn-float waves-effect"><i class="zmdi zmdi-mail-send"></i></button>
+                </div>
+
+                <div class="card-body card-padding">
+                  Cras leo sem, egestas a accumsan eget, euismod at nunc. Praesent vel mi blandit, tempus ex gravida, accumsan dui. Sed sed aliquam augue. Nullam vel suscipit purus, eu facilisis ante. Mauris nec commodo felis.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
