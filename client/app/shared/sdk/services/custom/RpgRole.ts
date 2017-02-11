@@ -12,9 +12,9 @@ import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Rx';
 import { RpgRole } from '../../models/RpgRole';
 import { RpgBoard } from '../../models/RpgBoard';
-import { RpgSkill } from '../../models/RpgSkill';
-import { RpgAttribute } from '../../models/RpgAttribute';
 import { RpgPlayerRpgRole } from '../../models/RpgPlayerRpgRole';
+import { RpgRoleRpgAttribute } from '../../models/RpgRoleRpgAttribute';
+import { RpgRoleRpgSkill } from '../../models/RpgRoleRpgSkill';
 
 
 /**
@@ -59,378 +59,6 @@ export class RpgRoleApi extends BaseLoopBackApi {
     let _postBody: any = {};
     let _urlParams: any = {};
     if (refresh) _urlParams.refresh = refresh;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
-   * Find a related item by id for rpgSkills.
-   *
-   * @param {any} id RpgRole id
-   *
-   * @param {any} fk Foreign key for rpgSkills
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `RpgRole` object.)
-   * </em>
-   */
-  public findByIdRpgSkills(id: any, fk: any): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgSkills/:fk";
-    let _routeParams: any = {
-      id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
-   * Delete a related item by id for rpgSkills.
-   *
-   * @param {any} id RpgRole id
-   *
-   * @param {any} fk Foreign key for rpgSkills
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * This method returns no data.
-   */
-  public destroyByIdRpgSkills(id: any, fk: any): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgSkills/:fk";
-    let _routeParams: any = {
-      id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
-   * Update a related item by id for rpgSkills.
-   *
-   * @param {any} id RpgRole id
-   *
-   * @param {any} fk Foreign key for rpgSkills
-   *
-   * @param {object} data Request data.
-   *
-   * This method expects a subset of model properties as request parameters.
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `RpgRole` object.)
-   * </em>
-   */
-  public updateByIdRpgSkills(id: any, fk: any, data: any = {}): Observable<any> {
-    let _method: string = "PUT";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgSkills/:fk";
-    let _routeParams: any = {
-      id: id,
-      fk: fk
-    };
-    let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
-   * Add a related item by id for rpgSkills.
-   *
-   * @param {any} id RpgRole id
-   *
-   * @param {any} fk Foreign key for rpgSkills
-   *
-   * @param {object} data Request data.
-   *
-   * This method expects a subset of model properties as request parameters.
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `RpgRole` object.)
-   * </em>
-   */
-  public linkRpgSkills(id: any, fk: any, data: any = {}): Observable<any> {
-    let _method: string = "PUT";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgSkills/rel/:fk";
-    let _routeParams: any = {
-      id: id,
-      fk: fk
-    };
-    let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
-   * Remove the rpgSkills relation to an item by id.
-   *
-   * @param {any} id RpgRole id
-   *
-   * @param {any} fk Foreign key for rpgSkills
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * This method returns no data.
-   */
-  public unlinkRpgSkills(id: any, fk: any): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgSkills/rel/:fk";
-    let _routeParams: any = {
-      id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
-   * Check the existence of rpgSkills relation to an item by id.
-   *
-   * @param {any} id RpgRole id
-   *
-   * @param {any} fk Foreign key for rpgSkills
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `RpgRole` object.)
-   * </em>
-   */
-  public existsRpgSkills(id: any, fk: any): Observable<any> {
-    let _method: string = "HEAD";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgSkills/rel/:fk";
-    let _routeParams: any = {
-      id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
-   * Find a related item by id for rpgAttributes.
-   *
-   * @param {any} id RpgRole id
-   *
-   * @param {any} fk Foreign key for rpgAttributes
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `RpgRole` object.)
-   * </em>
-   */
-  public findByIdRpgAttributes(id: any, fk: any): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgAttributes/:fk";
-    let _routeParams: any = {
-      id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
-   * Delete a related item by id for rpgAttributes.
-   *
-   * @param {any} id RpgRole id
-   *
-   * @param {any} fk Foreign key for rpgAttributes
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * This method returns no data.
-   */
-  public destroyByIdRpgAttributes(id: any, fk: any): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgAttributes/:fk";
-    let _routeParams: any = {
-      id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
-   * Update a related item by id for rpgAttributes.
-   *
-   * @param {any} id RpgRole id
-   *
-   * @param {any} fk Foreign key for rpgAttributes
-   *
-   * @param {object} data Request data.
-   *
-   * This method expects a subset of model properties as request parameters.
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `RpgRole` object.)
-   * </em>
-   */
-  public updateByIdRpgAttributes(id: any, fk: any, data: any = {}): Observable<any> {
-    let _method: string = "PUT";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgAttributes/:fk";
-    let _routeParams: any = {
-      id: id,
-      fk: fk
-    };
-    let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
-   * Add a related item by id for rpgAttributes.
-   *
-   * @param {any} id RpgRole id
-   *
-   * @param {any} fk Foreign key for rpgAttributes
-   *
-   * @param {object} data Request data.
-   *
-   * This method expects a subset of model properties as request parameters.
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `RpgRole` object.)
-   * </em>
-   */
-  public linkRpgAttributes(id: any, fk: any, data: any = {}): Observable<any> {
-    let _method: string = "PUT";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgAttributes/rel/:fk";
-    let _routeParams: any = {
-      id: id,
-      fk: fk
-    };
-    let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
-   * Remove the rpgAttributes relation to an item by id.
-   *
-   * @param {any} id RpgRole id
-   *
-   * @param {any} fk Foreign key for rpgAttributes
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * This method returns no data.
-   */
-  public unlinkRpgAttributes(id: any, fk: any): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgAttributes/rel/:fk";
-    let _routeParams: any = {
-      id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
-   * Check the existence of rpgAttributes relation to an item by id.
-   *
-   * @param {any} id RpgRole id
-   *
-   * @param {any} fk Foreign key for rpgAttributes
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `RpgRole` object.)
-   * </em>
-   */
-  public existsRpgAttributes(id: any, fk: any): Observable<any> {
-    let _method: string = "HEAD";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgAttributes/rel/:fk";
-    let _routeParams: any = {
-      id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
     return result;
   }
@@ -529,13 +157,13 @@ export class RpgRoleApi extends BaseLoopBackApi {
   }
 
   /**
-   * Queries rpgSkills of RpgRole.
+   * Find a related item by id for rpgRoleRpgAttributes.
    *
    * @param {any} id RpgRole id
    *
-   * @param {object} filter 
+   * @param {any} fk Foreign key for rpgRoleRpgAttributes
    *
-   * @returns {object[]} An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -544,24 +172,53 @@ export class RpgRoleApi extends BaseLoopBackApi {
    * This usually means the response is a `RpgRole` object.)
    * </em>
    */
-  public getRpgSkills(id: any, filter: LoopBackFilter = {}): Observable<any> {
+  public findByIdRpgRoleRpgAttributes(id: any, fk: any): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgSkills";
+    "/RpgRoles/:id/rpgRoleRpgAttributes/:fk";
     let _routeParams: any = {
-      id: id
+      id: id,
+      fk: fk
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (filter) _urlParams.filter = filter;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
     return result;
   }
 
   /**
-   * Creates a new instance in rpgSkills of this model.
+   * Delete a related item by id for rpgRoleRpgAttributes.
    *
    * @param {any} id RpgRole id
+   *
+   * @param {any} fk Foreign key for rpgRoleRpgAttributes
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public destroyByIdRpgRoleRpgAttributes(id: any, fk: any): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/RpgRoles/:id/rpgRoleRpgAttributes/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
+   * Update a related item by id for rpgRoleRpgAttributes.
+   *
+   * @param {any} id RpgRole id
+   *
+   * @param {any} fk Foreign key for rpgRoleRpgAttributes
    *
    * @param {object} data Request data.
    *
@@ -576,12 +233,13 @@ export class RpgRoleApi extends BaseLoopBackApi {
    * This usually means the response is a `RpgRole` object.)
    * </em>
    */
-  public createRpgSkills(id: any, data: any = {}): Observable<any> {
-    let _method: string = "POST";
+  public updateByIdRpgRoleRpgAttributes(id: any, fk: any, data: any = {}): Observable<any> {
+    let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgSkills";
+    "/RpgRoles/:id/rpgRoleRpgAttributes/:fk";
     let _routeParams: any = {
-      id: id
+      id: id,
+      fk: fk
     };
     let _postBody: any = {
       data: data
@@ -592,66 +250,13 @@ export class RpgRoleApi extends BaseLoopBackApi {
   }
 
   /**
-   * Deletes all rpgSkills of this model.
+   * Find a related item by id for rpgRoleRpgSkills.
    *
    * @param {any} id RpgRole id
+   *
+   * @param {any} fk Foreign key for rpgRoleRpgSkills
    *
    * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * This method returns no data.
-   */
-  public deleteRpgSkills(id: any): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgSkills";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
-   * Counts rpgSkills of RpgRole.
-   *
-   * @param {any} id RpgRole id
-   *
-   * @param {object} where Criteria to match model instances
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * Data properties:
-   *
-   *  - `count` – `{number}` - 
-   */
-  public countRpgSkills(id: any, where: any = {}): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgSkills/count";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (where) _urlParams.where = where;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
-   * Queries rpgAttributes of RpgRole.
-   *
-   * @param {any} id RpgRole id
-   *
-   * @param {object} filter 
-   *
-   * @returns {object[]} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -660,24 +265,53 @@ export class RpgRoleApi extends BaseLoopBackApi {
    * This usually means the response is a `RpgRole` object.)
    * </em>
    */
-  public getRpgAttributes(id: any, filter: LoopBackFilter = {}): Observable<any> {
+  public findByIdRpgRoleRpgSkills(id: any, fk: any): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgAttributes";
+    "/RpgRoles/:id/rpgRoleRpgSkills/:fk";
     let _routeParams: any = {
-      id: id
+      id: id,
+      fk: fk
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (filter) _urlParams.filter = filter;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
     return result;
   }
 
   /**
-   * Creates a new instance in rpgAttributes of this model.
+   * Delete a related item by id for rpgRoleRpgSkills.
    *
    * @param {any} id RpgRole id
+   *
+   * @param {any} fk Foreign key for rpgRoleRpgSkills
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public destroyByIdRpgRoleRpgSkills(id: any, fk: any): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/RpgRoles/:id/rpgRoleRpgSkills/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
+   * Update a related item by id for rpgRoleRpgSkills.
+   *
+   * @param {any} id RpgRole id
+   *
+   * @param {any} fk Foreign key for rpgRoleRpgSkills
    *
    * @param {object} data Request data.
    *
@@ -692,70 +326,18 @@ export class RpgRoleApi extends BaseLoopBackApi {
    * This usually means the response is a `RpgRole` object.)
    * </em>
    */
-  public createRpgAttributes(id: any, data: any = {}): Observable<any> {
-    let _method: string = "POST";
+  public updateByIdRpgRoleRpgSkills(id: any, fk: any, data: any = {}): Observable<any> {
+    let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgAttributes";
+    "/RpgRoles/:id/rpgRoleRpgSkills/:fk";
     let _routeParams: any = {
-      id: id
+      id: id,
+      fk: fk
     };
     let _postBody: any = {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
-   * Deletes all rpgAttributes of this model.
-   *
-   * @param {any} id RpgRole id
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * This method returns no data.
-   */
-  public deleteRpgAttributes(id: any): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgAttributes";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
-   * Counts rpgAttributes of RpgRole.
-   *
-   * @param {any} id RpgRole id
-   *
-   * @param {object} where Criteria to match model instances
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * Data properties:
-   *
-   *  - `count` – `{number}` - 
-   */
-  public countRpgAttributes(id: any, where: any = {}): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgAttributes/count";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (where) _urlParams.where = where;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
     return result;
   }
@@ -877,6 +459,238 @@ export class RpgRoleApi extends BaseLoopBackApi {
   }
 
   /**
+   * Queries rpgRoleRpgAttributes of RpgRole.
+   *
+   * @param {any} id RpgRole id
+   *
+   * @param {object} filter 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `RpgRole` object.)
+   * </em>
+   */
+  public getRpgRoleRpgAttributes(id: any, filter: LoopBackFilter = {}): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/RpgRoles/:id/rpgRoleRpgAttributes";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (filter) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
+   * Creates a new instance in rpgRoleRpgAttributes of this model.
+   *
+   * @param {any} id RpgRole id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `RpgRole` object.)
+   * </em>
+   */
+  public createRpgRoleRpgAttributes(id: any, data: any = {}): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/RpgRoles/:id/rpgRoleRpgAttributes";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
+   * Deletes all rpgRoleRpgAttributes of this model.
+   *
+   * @param {any} id RpgRole id
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deleteRpgRoleRpgAttributes(id: any): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/RpgRoles/:id/rpgRoleRpgAttributes";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
+   * Counts rpgRoleRpgAttributes of RpgRole.
+   *
+   * @param {any} id RpgRole id
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countRpgRoleRpgAttributes(id: any, where: any = {}): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/RpgRoles/:id/rpgRoleRpgAttributes/count";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (where) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
+   * Queries rpgRoleRpgSkills of RpgRole.
+   *
+   * @param {any} id RpgRole id
+   *
+   * @param {object} filter 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `RpgRole` object.)
+   * </em>
+   */
+  public getRpgRoleRpgSkills(id: any, filter: LoopBackFilter = {}): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/RpgRoles/:id/rpgRoleRpgSkills";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (filter) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
+   * Creates a new instance in rpgRoleRpgSkills of this model.
+   *
+   * @param {any} id RpgRole id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `RpgRole` object.)
+   * </em>
+   */
+  public createRpgRoleRpgSkills(id: any, data: any = {}): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/RpgRoles/:id/rpgRoleRpgSkills";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
+   * Deletes all rpgRoleRpgSkills of this model.
+   *
+   * @param {any} id RpgRole id
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deleteRpgRoleRpgSkills(id: any): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/RpgRoles/:id/rpgRoleRpgSkills";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
+   * Counts rpgRoleRpgSkills of RpgRole.
+   *
+   * @param {any} id RpgRole id
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countRpgRoleRpgSkills(id: any, where: any = {}): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/RpgRoles/:id/rpgRoleRpgSkills/count";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (where) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
    * Patch an existing model instance or insert a new one into the data source.
    *
    * @param {object} data Request data.
@@ -941,72 +755,6 @@ export class RpgRoleApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in rpgSkills of this model.
-   *
-   * @param {any} id RpgRole id
-   *
-   * @param {object} data Request data.
-   *
-   * This method expects a subset of model properties as request parameters.
-   *
-   * @returns {object[]} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `RpgRole` object.)
-   * </em>
-   */
-  public createManyRpgSkills(id: any, data: any[] = []): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgSkills";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
-   * Creates a new instance in rpgAttributes of this model.
-   *
-   * @param {any} id RpgRole id
-   *
-   * @param {object} data Request data.
-   *
-   * This method expects a subset of model properties as request parameters.
-   *
-   * @returns {object[]} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `RpgRole` object.)
-   * </em>
-   */
-  public createManyRpgAttributes(id: any, data: any[] = []): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/RpgRoles/:id/rpgAttributes";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
    * Creates a new instance in rpgPlayerRpgRole of this model.
    *
    * @param {any} id RpgRole id
@@ -1028,6 +776,72 @@ export class RpgRoleApi extends BaseLoopBackApi {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/RpgRoles/:id/rpgPlayerRpgRole";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
+   * Creates a new instance in rpgRoleRpgAttributes of this model.
+   *
+   * @param {any} id RpgRole id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `RpgRole` object.)
+   * </em>
+   */
+  public createManyRpgRoleRpgAttributes(id: any, data: any[] = []): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/RpgRoles/:id/rpgRoleRpgAttributes";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
+   * Creates a new instance in rpgRoleRpgSkills of this model.
+   *
+   * @param {any} id RpgRole id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `RpgRole` object.)
+   * </em>
+   */
+  public createManyRpgRoleRpgSkills(id: any, data: any[] = []): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/RpgRoles/:id/rpgRoleRpgSkills";
     let _routeParams: any = {
       id: id
     };

@@ -1,9 +1,9 @@
 /* tslint:disable */
 import {
   RpgBoard,
-  RpgSkill,
-  RpgAttribute,
-  RpgPlayerRpgRole
+  RpgPlayerRpgRole,
+  RpgRoleRpgAttribute,
+  RpgRoleRpgSkill
 } from '../index';
 
 declare var Object: any;
@@ -12,9 +12,9 @@ export interface RpgRoleInterface {
   id?: any;
   rpgBoardId?: any;
   rpgBoard?: RpgBoard;
-  rpgSkills?: RpgSkill[];
-  rpgAttributes?: RpgAttribute[];
   rpgPlayerRpgRole?: RpgPlayerRpgRole[];
+  rpgRoleRpgAttributes?: RpgRoleRpgAttribute[];
+  rpgRoleRpgSkills?: RpgRoleRpgSkill[];
 }
 
 export class RpgRole implements RpgRoleInterface {
@@ -22,9 +22,9 @@ export class RpgRole implements RpgRoleInterface {
   id: any;
   rpgBoardId: any;
   rpgBoard: RpgBoard;
-  rpgSkills: RpgSkill[];
-  rpgAttributes: RpgAttribute[];
   rpgPlayerRpgRole: RpgPlayerRpgRole[];
+  rpgRoleRpgAttributes: RpgRoleRpgAttribute[];
+  rpgRoleRpgSkills: RpgRoleRpgSkill[];
   constructor(data?: RpgRoleInterface) {
     Object.assign(this, data);
   }
@@ -75,20 +75,20 @@ export class RpgRole implements RpgRoleInterface {
           type: 'RpgBoard',
           model: 'RpgBoard'
         },
-        rpgSkills: {
-          name: 'rpgSkills',
-          type: 'RpgSkill[]',
-          model: 'RpgSkill'
-        },
-        rpgAttributes: {
-          name: 'rpgAttributes',
-          type: 'RpgAttribute[]',
-          model: 'RpgAttribute'
-        },
         rpgPlayerRpgRole: {
           name: 'rpgPlayerRpgRole',
           type: 'RpgPlayerRpgRole[]',
           model: 'RpgPlayerRpgRole'
+        },
+        rpgRoleRpgAttributes: {
+          name: 'rpgRoleRpgAttributes',
+          type: 'RpgRoleRpgAttribute[]',
+          model: 'RpgRoleRpgAttribute'
+        },
+        rpgRoleRpgSkills: {
+          name: 'rpgRoleRpgSkills',
+          type: 'RpgRoleRpgSkill[]',
+          model: 'RpgRoleRpgSkill'
         },
       }
     }

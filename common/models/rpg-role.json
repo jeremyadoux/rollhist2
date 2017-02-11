@@ -18,19 +18,19 @@
       "model": "RpgBoard",
       "foreignKey": ""
     },
-    "rpgSkills": {
-      "type": "hasAndBelongsToMany",
-      "model": "RpgSkill",
-      "foreignKey": ""
-    },
-    "rpgAttributes": {
-      "type": "hasAndBelongsToMany",
-      "model": "RpgAttribute",
-      "foreignKey": ""
-    },
     "rpgPlayerRpgRole": {
       "type": "hasMany",
       "model": "RpgPlayerRpgRole",
+      "foreignKey": ""
+    },
+    "rpgRoleRpgAttributes": {
+      "type": "hasMany",
+      "model": "RpgRoleRpgAttribute",
+      "foreignKey": ""
+    },
+    "rpgRoleRpgSkills": {
+      "type": "hasMany",
+      "model": "RpgRoleRpgSkill",
       "foreignKey": ""
     }
   },

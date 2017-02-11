@@ -2,8 +2,9 @@
 import {
   RpgBoard,
   RpgSkill,
-  RpgRole,
-  RpgPlayerRpgAttribute
+  RpgPlayerRpgAttribute,
+  RpgRoleRpgAttribute,
+  RpgRaceRpgAttribute
 } from '../index';
 
 declare var Object: any;
@@ -13,8 +14,9 @@ export interface RpgAttributeInterface {
   rpgBoardId?: any;
   rpgBoard?: RpgBoard;
   rpgSkills?: RpgSkill[];
-  rpgRoles?: RpgRole[];
   rpgPlayerRpgAttribute?: RpgPlayerRpgAttribute[];
+  rpgRoleRpgAttributes?: RpgRoleRpgAttribute[];
+  rpgRaceRpgAttributes?: RpgRaceRpgAttribute[];
 }
 
 export class RpgAttribute implements RpgAttributeInterface {
@@ -23,8 +25,9 @@ export class RpgAttribute implements RpgAttributeInterface {
   rpgBoardId: any;
   rpgBoard: RpgBoard;
   rpgSkills: RpgSkill[];
-  rpgRoles: RpgRole[];
   rpgPlayerRpgAttribute: RpgPlayerRpgAttribute[];
+  rpgRoleRpgAttributes: RpgRoleRpgAttribute[];
+  rpgRaceRpgAttributes: RpgRaceRpgAttribute[];
   constructor(data?: RpgAttributeInterface) {
     Object.assign(this, data);
   }
@@ -80,15 +83,20 @@ export class RpgAttribute implements RpgAttributeInterface {
           type: 'RpgSkill[]',
           model: 'RpgSkill'
         },
-        rpgRoles: {
-          name: 'rpgRoles',
-          type: 'RpgRole[]',
-          model: 'RpgRole'
-        },
         rpgPlayerRpgAttribute: {
           name: 'rpgPlayerRpgAttribute',
           type: 'RpgPlayerRpgAttribute[]',
           model: 'RpgPlayerRpgAttribute'
+        },
+        rpgRoleRpgAttributes: {
+          name: 'rpgRoleRpgAttributes',
+          type: 'RpgRoleRpgAttribute[]',
+          model: 'RpgRoleRpgAttribute'
+        },
+        rpgRaceRpgAttributes: {
+          name: 'rpgRaceRpgAttributes',
+          type: 'RpgRaceRpgAttribute[]',
+          model: 'RpgRaceRpgAttribute'
         },
       }
     }

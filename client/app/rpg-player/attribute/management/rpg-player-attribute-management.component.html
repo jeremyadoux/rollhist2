@@ -1,7 +1,7 @@
-<div class="col-sm-4">
+<div class="col-sm-6">
   <div class="form-group form-horizontal">
     <label class="col-sm-4 control-label">{{rpgAttributePlayer.rpgAttribute.name}}</label>
-    <div class="col-sm-8">
+    <div class="col-sm-4">
       <div class="input-group">
         <span class="input-group-addon">
           <i (click)="changeLess()" class="icon-pv zmdi zmdi-hc-fw zmdi-minus-circle c-red waves-effect"></i>
@@ -13,6 +13,9 @@
           <i (click)="changeMore()" class="icon-pv zmdi zmdi-hc-fw zmdi-plus-circle c-green waves-effect"></i>
         </span>
       </div>
+    </div>
+    <div class="col-sm-4">
+      <p class="f-500 c-black">Bonus ({{getBonus()}})</p>
     </div>
   </div>
 </div>

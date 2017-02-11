@@ -23,14 +23,19 @@
       "model": "RpgSkill",
       "foreignKey": ""
     },
-    "rpgRoles": {
-      "type": "hasAndBelongsToMany",
-      "model": "RpgRole",
-      "foreignKey": ""
-    },
     "rpgPlayerRpgAttribute": {
       "type": "hasMany",
       "model": "RpgPlayerRpgAttribute",
+      "foreignKey": ""
+    },
+    "rpgRaceRpgAttributes": {
+      "type": "hasMany",
+      "model": "RpgRaceRpgAttribute",
+      "foreignKey": ""
+    },
+    "rpgRoleRpgAttributes": {
+      "type": "hasMany",
+      "model": "RpgRoleRpgAttribute",
       "foreignKey": ""
     }
   },

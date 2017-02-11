@@ -8,8 +8,9 @@ module.exports = function (app) {
   var RpgSkillModel = app.models.RpgSkill;
   var RpgAttributeModel = app.models.RpgAttribute;
   var RpgRoleModel = app.models.RpgRole;
-  var RpgPlayerModel = app.models.RpgPlayer;
-  var RpgPlayerRpgRoleModel = app.models.RpgPlayerRpgRole;
+  var RpgRaceModel = app.models.RpgRace;
+  var RpgRoleRpgAttributeModel = app.models.RpgRoleRpgAttribute;
+  var RpgRoleRpgSkillModel = app.models.RpgRoleRpgSkill;
 
   var AttributeAndSkill = [
     {
@@ -99,95 +100,220 @@ module.exports = function (app) {
     {
       name: 'Guerrier',
       skills: [
-        'Athlétisme',
-        'Connaissance de la rue',
-        'Endurance',
-        'Intimidation',
-        'Soin'
+        {
+          name: 'Athlétisme',
+          modif: 0,
+          canMaster: true
+        },
+        {
+          name: 'Connaissance de la rue',
+          modif: 0,
+          canMaster: true
+        },
+        {
+          name: 'Endurance',
+          modif: 0,
+          canMaster: true
+        },
+        {
+          name: 'Intimidation',
+          modif: 0,
+          canMaster: true
+        },
+        {
+          name: 'Soin',
+          modif: 0,
+          canMaster: true
+        }
       ],
       attributes: [
-        'Force',
-        'Constitution',
-        'Dextérité',
-        'Intelligence',
-        'Sagesse',
-        'Charisme'
-      ],
-      players: [
         {
-          firstname: "Richard",
-          lastname: "Tememer",
-          age: 93,
-          size: "1m98",
-          weight: "89Kg",
-          caseSize: 1
+          name: 'Force',
+          modif: 0
+        },
+        {
+          name: 'Constitution',
+          modif: 0
+        },
+        {
+          name: 'Dextérité',
+          modif: 0
+        },
+        {
+          name: 'Intelligence',
+          modif: 0
+        },
+        {
+          name: 'Sagesse',
+          modif: 0
+        },
+        {
+          name: 'Charisme',
+          modif: 0
         }
       ]
     },
     {
       name: 'Magicien',
       skills: [
-        'Arcanes',
-        'Diplomatie',
-        'Exploration',
-        'Histoire',
-        'Intuition',
-        'Nature',
-        'Religion'
+        {
+          name: 'Arcanes',
+          modif: 0,
+          canMaster: true
+        },
+        {
+          name: 'Diplomatie',
+          modif: 0,
+          canMaster: true
+        },
+        {
+          name: 'Exploration',
+          modif: 0,
+          canMaster: true
+        },
+        {
+          name: 'Histoire',
+          modif: 0,
+          canMaster: true
+        },
+        {
+          name: 'Intuition',
+          modif: 0,
+          canMaster: true
+        },
+        {
+          name: 'Nature',
+          modif: 0,
+          canMaster: true
+        },
+        {
+          name: 'Religion',
+          modif: 0,
+          canMaster: true
+        }
       ],
       attributes: [
-        'Force',
-        'Constitution',
-        'Dextérité',
-        'Intelligence',
-        'Sagesse',
-        'Charisme'
-      ],
-      players: [
         {
-          firstname: "Gospel",
-          lastname: "Geimzon",
-          age: 23,
-          size: "1m67",
-          weight: "42Kg",
-          caseSize: 1
+          name: 'Force',
+          modif: 0
+        },
+        {
+          name: 'Constitution',
+          modif: 0
+        },
+        {
+          name: 'Dextérité',
+          modif: 0
+        },
+        {
+          name: 'Intelligence',
+          modif: 0
+        },
+        {
+          name: 'Sagesse',
+          modif: 0
+        },
+        {
+          name: 'Charisme',
+          modif: 0
         }
       ]
     },
     {
       name: 'Paladin',
       skills: [
-        'Diplomatie',
-        'Endurance',
-        'Intimidation',
-        'Intuition',
-        'Soin',
-        'Religion'
-      ],
-      attributes: [
-        'Force',
-        'Constitution',
-        'Dextérité',
-        'Intelligence',
-        'Sagesse',
-        'Charisme'
-      ],
-      players: [
         {
-          firstname: "robert",
-          lastname: "tomson",
-          age: 34,
-          size: "1m87",
-          weight: "45Kg",
-          caseSize: 1
+          name: 'Diplomatie',
+          modif: 0,
+          canMaster: true
         },
         {
-          firstname: "michel",
-          lastname: "Jojoe",
-          age: 43,
-          size: "1m57",
-          weight: "35Kg",
-          caseSize: 2
+          name: 'Endurance',
+          modif: 0,
+          canMaster: true
+        },
+        {
+          name: 'Intimidation',
+          modif: 0,
+          canMaster: true
+        },
+        {
+          name: 'Intuition',
+          modif: 0,
+          canMaster: true
+        },
+        {
+          name: 'Soin',
+          modif: 0,
+          canMaster: true
+        },
+        {
+          name: 'Religion',
+          modif: 0,
+          canMaster: true
+        }
+      ],
+      attributes: [
+        {
+          name: 'Force',
+          modif: 0
+        },
+        {
+          name: 'Constitution',
+          modif: 0
+        },
+        {
+          name: 'Dextérité',
+          modif: 0
+        },
+        {
+          name: 'Intelligence',
+          modif: 0
+        },
+        {
+          name: 'Sagesse',
+          modif: 0
+        },
+        {
+          name: 'Charisme',
+          modif: 0
+        }
+      ]
+    }
+  ];
+
+  var raceWithAll = [
+    {
+      skills: [
+        {
+          name: 'Arcanes',
+          modif: 0
+        }
+      ],
+      attributes: [
+        {
+          name: 'Force',
+          modif: 0
+        },
+        {
+          name: 'Constitution',
+          modif: 0
+        },
+        {
+          name: 'Dextérité',
+          modif: 0
+        },
+        {
+          name: 'Intelligence',
+          modif: 0
+        },
+        {
+          name: 'Sagesse',
+          modif: 0
+        },
+        {
+          name: 'Charisme',
+          modif: 0
         }
       ]
     }
@@ -234,36 +360,32 @@ module.exports = function (app) {
           }, function (err, roleLoaded) {
             Promise.map(RpgRole.skills, function(skill) {
               return new Promise(function(resolve, reject) {
-                RpgSkillModel.findOne({where: {name: skill, rpgBoardId: RpgBoard.id}}, function(err, skillLoaded) {
-                  roleLoaded.rpgSkills.add(skillLoaded,
-                    function(err) {
-                      resolve();
-                    });
+                RpgSkillModel.findOne({where: {name: skill.name, rpgBoardId: RpgBoard.id}}, function(err, skillLoaded) {
+                  RpgRoleRpgSkillModel.findOrCreate({where: {rpgSkillId: skillLoaded.id, rpgRoleId: roleLoaded.id}}, {
+                    rpgSkill: skillLoaded,
+                    rpgRole: roleLoaded,
+                    modif: skill.modif,
+                    canMaster: skill.canMaster
+                  }, function (err, data) {
+                    resolve();
+                  })
                 });
               });
             }).then(function() {
               Promise.map(RpgRole.attributes, function(attribute) {
                 return new Promise(function(resolve, reject) {
-                  RpgAttributeModel.findOne({where: {name: attribute, rpgBoardId: RpgBoard.id}}, function(err, attributeLoaded) {
-                    roleLoaded.rpgAttributes.add(attributeLoaded,
-                      function(err) {
-                        resolve();
-                      });
+                  RpgAttributeModel.findOne({where: {name: attribute.name, rpgBoardId: RpgBoard.id}}, function(err, attributeLoaded) {
+                    RpgRoleRpgAttributeModel.findOrCreate({where: {rpgAttributeId: attributeLoaded.id, rpgRoleId: roleLoaded.id}}, {
+                      rpgAttribute: attributeLoaded,
+                      rpgRole: roleLoaded,
+                      modif: attribute.modif
+                    }, function (err, data) {
+                      resolve();
+                    })
                   });
                 });
               }).then(function() {
-                Promise.map(RpgRole.players, function(player) {
-                  return new Promise(function(resolve, reject) {
-                    player.rpgBoard = RpgBoard;
-                    RpgPlayerModel.findOrCreate({where: {firstname: player.firstname, lastname: player.lastname, rpgBoardId: player.rpgBoard.id}}, player, function(err, playerLoaded) {
-                      RpgPlayerRpgRoleModel.findOrCreate({where:{rpgRoleId: roleLoaded.id, rpgPlayerId: playerLoaded.id}}, {rpgRole: roleLoaded, rpgPlayer: playerLoaded, data: playerLoaded.firstname + " " + playerLoaded.lastname}, function(err, result) {
-                        resolve();
-                      });
-                    });
-                  });
-                }).then(function() {
-                  resolve();
-                });
+                resolve();
               });
             });
           });

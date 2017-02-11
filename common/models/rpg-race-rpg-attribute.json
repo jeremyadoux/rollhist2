@@ -1,0 +1,29 @@
+{
+  "name": "RpgRaceRpgAttribute",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "modif": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {
+    "rpgRace": {
+      "type": "belongsTo",
+      "model": "RpgRace",
+      "foreignKey": ""
+    },
+    "rpgAttribute": {
+      "type": "belongsTo",
+      "model": "RpgAttribute",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

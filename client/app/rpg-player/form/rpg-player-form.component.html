@@ -72,8 +72,11 @@
               <p class="f-500 c-black m-b-15">La classe</p>
               <div class="select">
                 <select class="form-control" [(ngModel)]="rpgPlayer.rpgPlayerRpgRole[0]">
-                  <option *ngFor="let role of rpgRoles" value="{{role}}">{{role.name}}</option>
+                  <option *ngFor="let role of rpgRoles" [ngValue]="role">{{role.name}}</option>
                 </select>
+              </div>
+              <div>
+                plop : {{rpgPlayer.rpgPlayerRpgRole[0].name}}
               </div>
             </div>
           </div>
@@ -89,7 +92,7 @@
           <div class="row m-b-20" *ngSwitchCase="2" [@switchAnimation]="'fadeIn'">
             <div class="col-sm-12">
               <div class="row m-b-20" *ngFor="let attribute of rpgPlayer.rpgPlayerRpgAttribute">
-                <rpg-player-attribute-management [rpgAttributePlayer]="attribute"></rpg-player-attribute-management>
+                <rpg-player-attribute-management [rpgPlayer]="rpgPlayer" [rpgAttributePlayer]="attribute"></rpg-player-attribute-management>
               </div>
             </div>
           </div>

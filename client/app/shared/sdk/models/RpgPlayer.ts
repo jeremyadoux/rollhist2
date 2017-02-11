@@ -3,7 +3,8 @@ import {
   RpgBoard,
   RpgPlayerRpgRole,
   RpgPlayerRpgAttribute,
-  RpgPlayerRpgSkill
+  RpgPlayerRpgSkill,
+  RpgPlayerRpgRace
 } from '../index';
 
 declare var Object: any;
@@ -20,6 +21,7 @@ export interface RpgPlayerInterface {
   rpgPlayerRpgRole?: RpgPlayerRpgRole[];
   rpgPlayerRpgAttribute?: RpgPlayerRpgAttribute[];
   rpgPlayerRpgSkill?: RpgPlayerRpgSkill[];
+  rpgPlayerRpgRace?: RpgPlayerRpgRace[];
 }
 
 export class RpgPlayer implements RpgPlayerInterface {
@@ -35,6 +37,7 @@ export class RpgPlayer implements RpgPlayerInterface {
   rpgPlayerRpgRole: RpgPlayerRpgRole[];
   rpgPlayerRpgAttribute: RpgPlayerRpgAttribute[];
   rpgPlayerRpgSkill: RpgPlayerRpgSkill[];
+  rpgPlayerRpgRace: RpgPlayerRpgRace[];
   constructor(data?: RpgPlayerInterface) {
     Object.assign(this, data);
   }
@@ -120,6 +123,11 @@ export class RpgPlayer implements RpgPlayerInterface {
           name: 'rpgPlayerRpgSkill',
           type: 'RpgPlayerRpgSkill[]',
           model: 'RpgPlayerRpgSkill'
+        },
+        rpgPlayerRpgRace: {
+          name: 'rpgPlayerRpgRace',
+          type: 'RpgPlayerRpgRace[]',
+          model: 'RpgPlayerRpgRace'
         },
       }
     }

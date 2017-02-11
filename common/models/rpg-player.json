@@ -36,6 +36,11 @@
       "model": "RpgPlayerRpgRole",
       "foreignKey": ""
     },
+    "rpgPlayerRpgRace": {
+      "type": "hasMany",
+      "model": "RpgPlayerRpgRace",
+      "foreignKey": ""
+    },
     "rpgBoard": {
       "type": "belongsTo",
       "model": "RpgBoard",

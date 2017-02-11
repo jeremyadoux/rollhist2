@@ -1,0 +1,33 @@
+{
+  "name": "RpgRoleRpgSkill",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "modif": {
+      "type": "number",
+      "default": 0
+    },
+    "canMaster": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "rpgRole": {
+      "type": "belongsTo",
+      "model": "RpgRole",
+      "foreignKey": ""
+    },
+    "rpgSkill": {
+      "type": "belongsTo",
+      "model": "RpgSkill",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,5 +1,5 @@
 {
-  "name": "RpgSkill",
+  "name": "RpgRace",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -13,19 +13,9 @@
   },
   "validations": [],
   "relations": {
-    "rpgBoard": {
-      "type": "belongsTo",
-      "model": "RpgBoard",
-      "foreignKey": ""
-    },
-    "rpgAttribute": {
-      "type": "belongsTo",
-      "model": "RpgAttribute",
-      "foreignKey": ""
-    },
-    "rpgPlayerRpgSkill": {
+    "rpgRaceRpgAttributes": {
       "type": "hasMany",
-      "model": "RpgPlayerRpgSkill",
+      "model": "RpgRaceRpgAttribute",
       "foreignKey": ""
     },
     "rpgRaceRpgSkills": {
@@ -33,9 +23,9 @@
       "model": "RpgRaceRpgSkill",
       "foreignKey": ""
     },
-    "rpgRoleRpgSkills": {
+    "rpgPlayerRpgRace": {
       "type": "hasMany",
-      "model": "RpgRoleRpgSkill",
+      "model": "RpgPlayerRpgRace",
       "foreignKey": ""
     }
   },

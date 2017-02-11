@@ -63,5 +63,29 @@
   "RpgPlayerRpgSkill": {
     "dataSource": "mongo",
     "public": true
+  },
+  "RpgRace": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "RpgRoleRpgAttribute": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "RpgRoleRpgSkill": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "RpgRaceRpgSkill": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "RpgRaceRpgAttribute": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "RpgPlayerRpgRace": {
+    "dataSource": "mongo",
+    "public": true
   }
 }

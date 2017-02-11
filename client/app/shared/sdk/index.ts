@@ -53,6 +53,12 @@ import { RpgPlayerApi } from './services/custom/RpgPlayer';
 import { RpgPlayerRpgRoleApi } from './services/custom/RpgPlayerRpgRole';
 import { RpgPlayerRpgAttributeApi } from './services/custom/RpgPlayerRpgAttribute';
 import { RpgPlayerRpgSkillApi } from './services/custom/RpgPlayerRpgSkill';
+import { RpgRaceApi } from './services/custom/RpgRace';
+import { RpgRoleRpgAttributeApi } from './services/custom/RpgRoleRpgAttribute';
+import { RpgRoleRpgSkillApi } from './services/custom/RpgRoleRpgSkill';
+import { RpgRaceRpgSkillApi } from './services/custom/RpgRaceRpgSkill';
+import { RpgRaceRpgAttributeApi } from './services/custom/RpgRaceRpgAttribute';
+import { RpgPlayerRpgRaceApi } from './services/custom/RpgPlayerRpgRace';
 /**
 * @module SDKBrowserModule
 * @description
@@ -91,6 +97,12 @@ export class SDKBrowserModule {
         RpgPlayerRpgRoleApi,
         RpgPlayerRpgAttributeApi,
         RpgPlayerRpgSkillApi,
+        RpgRaceApi,
+        RpgRoleRpgAttributeApi,
+        RpgRoleRpgSkillApi,
+        RpgRaceRpgSkillApi,
+        RpgRaceRpgAttributeApi,
+        RpgPlayerRpgRaceApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

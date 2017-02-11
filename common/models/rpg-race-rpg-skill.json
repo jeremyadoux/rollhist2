@@ -1,0 +1,29 @@
+{
+  "name": "RpgRaceRpgSkill",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "modif": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {
+    "rpgRace": {
+      "type": "belongsTo",
+      "model": "RpgRace",
+      "foreignKey": ""
+    },
+    "rpgSkill": {
+      "type": "belongsTo",
+      "model": "RpgSkill",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

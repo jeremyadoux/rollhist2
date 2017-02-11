@@ -31,6 +31,7 @@ export class RpgPlayerFormComponent implements OnInit{
   public rpgSkills: RpgSkill[] = [];
   public rpgPlayer : RpgPlayer = new RpgPlayer;
   public panelValue: number = 0;
+  public rpgRoleTest: RpgRole = new RpgRole;
 
   constructor(private rpgBoardApi: RpgBoardApi, private rpgPlayerApi: RpgPlayerApi) {
 
@@ -48,7 +49,7 @@ export class RpgPlayerFormComponent implements OnInit{
 
   getRoles() {
     return new Promise((resolve, reject) => {
-      this.rpgBoardApi.getRpgRoles(this.rpgBoard.id).subscribe((data: RpgRole[]) => {
+      this.rpgBoardApi.getRpgRoles(this.rpgBoard.id, {"include":[{"rpgRoleRpgAttributes":"rpgAttribute"}, {"rpgRoleRpgSkills":"rpgSkill"}]}).subscribe((data: RpgRole[]) => {
         this.rpgRoles = data;
         resolve();
       })
@@ -81,7 +82,7 @@ export class RpgPlayerFormComponent implements OnInit{
     this.rpgPlayer.rpgPlayerRpgSkill = [];
 
     let rpgPlayerRpgAttribute : RpgPlayerRpgAttribute;
-    for ( let entry: RpgAttribute of this.rpgAttributes) {
+    for ( let entry of this.rpgAttributes) {
       rpgPlayerRpgAttribute = new RpgPlayerRpgAttribute;
       rpgPlayerRpgAttribute.value = 10;
       rpgPlayerRpgAttribute.rpgAttribute = entry;
@@ -89,7 +90,7 @@ export class RpgPlayerFormComponent implements OnInit{
     }
 
     let rpgPlayerRpgSkill : RpgPlayerRpgSkill;
-    for ( let entry: RpgSkill of this.rpgSkills) {
+    for ( let entry of this.rpgSkills) {
       rpgPlayerRpgSkill = new RpgPlayerRpgSkill;
       rpgPlayerRpgSkill.value = 10;
       rpgPlayerRpgSkill.rpgSkill = entry;
